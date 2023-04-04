@@ -1,5 +1,5 @@
 <template>
-  <div class="resultBlock">
+  <div class="resultBlock" v-if="results.length">
     <h2>Score Board (top 5)</h2>
     <ul>
       <li v-for="(result, index) in results" :key="index">
@@ -20,7 +20,7 @@ export default {
 
 <style>
 .resultBlock {
-  position: absolute;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -28,14 +28,23 @@ export default {
   text-align: center;
 }
 
+.resultBlock h2 {
+  font-size: 24px;
+}
+
+.resultBlockEmpty {
+  text-align: center;
+}
+
+
 .resultBlock ul {
-  
+
   list-style-type: none;
 }
 
 .resultBlock li {
   align-items: center;
-justify-content: center;
+  justify-content: center;
   display: flex;
 }
 
